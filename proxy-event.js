@@ -45,6 +45,10 @@ ProxyEvent.prototype.startPropagation = function () {
     this._bubbles = true;
 }
 
+ProxyEvent.prototype.stopPropagation = function () {
+    this._rawEvent.stopPropagation()
+}
+
 function MouseEvent(ev) {
     for (var i = 0; i < ALL_PROPS.length; i++) {
         var propKey = ALL_PROPS[i]
